@@ -47,14 +47,30 @@ var convertThreeDigit = function(userInput) {
   return newArray.toString();
 }
 
+// Convert a four digit number into a roman numeral
+var convertFourDigit = function(userInput) {
+  var fourDigitRoman = ['', 'M', 'MM', 'MMM']
+  var newArray = [];
+  var numArray = userInput.toString().split("");
+
+
+  for(var index = 0; index < numbersOneNine.length; index += 1) {
+    if (parseInt(numArray[numArray.length-4]) === index) {
+      newArray.push(fourDigitRoman[index]);
+    }
+  }
+  return newArray.toString();
+}
+
 var romanCalc = function(userInput) {
   var newArray = [];
 
   var oneDigit = convertOneDigit(userInput); //
   var twoDigit = convertTwoDigit(userInput);
   var threeDigit = convertThreeDigit(userInput);
+  var fourDigit = convertFourDigit(userInput);
 
-  newArray.push(threeDigit + twoDigit + oneDigit);
+  newArray.push(fourDigit + threeDigit + twoDigit + oneDigit);
 
   return newArray.toString(); // 12
 };
@@ -64,7 +80,11 @@ $(document).ready(function() {
   $("form#romanform").submit(function(event) {
     event.preventDefault();
     var userInput = parseInt($("input#numberInput").val());
-    var result = romanCalc(userInput);
-    $("#result").text(result);
+    if (userInput < 4000) {
+      var result = romanCalc(userInput);
+      $("#result").text(result);
+    } else {
+      alert("Roman numerals only go up to 3999.")
+    }
   });
 });
