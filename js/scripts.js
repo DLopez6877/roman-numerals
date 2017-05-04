@@ -1,3 +1,4 @@
+var numbersZeroNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 var convert = function (userInput) {
   // converts number 1 into "1"
@@ -9,8 +10,26 @@ var convert = function (userInput) {
     // converts number 3 into "III"
   } else if (userInput === 3) {
     return "III";
+    // converts number 4 into "IV"
+  } else if (userInput === 4) {
+    return "IV";
+    // converts number 5 into "V"
+  } else if (userInput === 5) {
+    return "V";
+    // converts number 6 into "VI"
+  } else if (userInput === 6) {
+    return "VI";
+    // converts number 7 into "VII"
+  } else if (userInput === 7) {
+    return "VII";
+    // converts number 8 into "VIII"
+  } else if (userInput === 8) {
+    return "VIII";
+    // converts number 9 into "IX"
+  } else if (userInput === 9) {
+    return "IX";
   } else {
-    return "ooga booga";
+    return "";
   }
 };
 
