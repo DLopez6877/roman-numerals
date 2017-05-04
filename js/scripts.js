@@ -1,14 +1,20 @@
-var romanCalc = function(userInput) {
+var convOne = function (userInput) {
+  if (userInput === 1 ) {
+    return "I";
+  }
+};
 
-  return userInput + ('a');
+var romanCalc = function(userInput) {
+  return convOne(userInput);
 };
 
 // User Interface goes here
 $(document).ready(function() {
   $("form#romanform").submit(function(event) {
     event.preventDefault();
-    var userInput = ($ ("input#numberInput").val());
+    var userInput = parseInt($("input#numberInput").val());
     var result = romanCalc(userInput);
     $("#result").text(result);
+    console.log(result);
   });
 });
