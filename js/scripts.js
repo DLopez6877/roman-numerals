@@ -7,6 +7,8 @@ var convert = function (userInput) {
   } else if (userInput === 2) {
     return "II";
     // converts number 3 into "III"
+  } else if (userInput === 3) {
+    return "III";
   } else {
     return "ooga booga";
   }
